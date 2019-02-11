@@ -82,7 +82,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="toDoFieldChanged:" destination="JXr-g7-4vG" eventType="editingChanged" id="5fk-L1-QAl"/>
+                                    <action selector="toDoFieldChanged:" destination="JXr-g7-4vG" eventType="editingDidEnd" id="eH0-tf-qMo"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,6 +106,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ToDoField" destination="LeC-v8-hjw" id="ZXs-Xy-t34"/>
+                        <outlet property="saveBarButton" destination="IZt-Jk-lI8" id="YWT-5g-1WH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hna-YM-9dw" userLabel="First Responder" sceneMemberID="firstResponder"/>

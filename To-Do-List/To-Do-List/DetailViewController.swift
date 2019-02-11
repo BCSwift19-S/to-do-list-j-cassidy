@@ -11,9 +11,20 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var ToDoField: UITextField!
+    var toDoItem: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let toDoItem = toDoItem {
+            ToDoField.text = toDoItem
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindFromSave" {
+            toDoItem = ToDoField.text
+        }
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
